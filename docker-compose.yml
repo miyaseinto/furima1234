@@ -5,3 +5,5 @@ services:
     build:
       context: .
       dockerfile: './.docker/php'
+    ports:
+      -9000:9000
