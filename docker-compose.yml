@@ -7,3 +7,5 @@ services:
       dockerfile: './.docker/php'
     ports:
       -9000:9000
+  db:
+    image: mysql
