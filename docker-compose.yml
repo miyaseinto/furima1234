@@ -4,8 +4,18 @@ services:
     container_name: furima_app
     build:
       context: .
-      dockerfile: './.docker/php'
+      dockerfile: ./.docker/php/Docker
     ports:
-      -9000:9000
+      - 9000:9000
   db:
-    image: mysql
+    container_name: furima_db
+    image: mysql:8.0
+    ports:
+      - 3306:3306
+  nginx:
+    container_name: furima_ngenx
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Docker
+    ports:
+      - 80:80
