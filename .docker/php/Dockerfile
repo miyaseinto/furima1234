@@ -1,7 +1,0 @@
-FROM php:8.0
-
-COPY
-
-RUN 
-
-WORKDIR 

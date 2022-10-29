@@ -3,7 +3,7 @@ ps:
 	docker ps
 
 up:
-	docker-compose up -d
+	docker-compose up -d --build
 
 status:
 	docker status

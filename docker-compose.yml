@@ -1,30 +1,9 @@
-version: '3'
+version: '3.9'
+
 services:
   app:
-    container_name: furima_app
     build:
       context: .
-      dockerfile: ./.docker/php/Docker
-    ports:
-      - 9000:9000
+      dockerfile: ./docker/app/Dockerfile
     volumes:
-      - 
-  db:
-    container_name: furima_db
-    image: mysql:8.0
-    enviroment:
-      MYSQL_DATABASE: $MYSQL_DATABASE
-      MYSQL_USER: $MYSQL_USER
-      MYSQL_PASSWORD: $MYSQL_PASSWORD
-      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-    volumes:
-      - test
-    ports:
-      - 3306:3306
-  nginx:
-    container_name: furima_ngenx
-    build:
-      context: .
-      dockerfile: ./docker/nginx/Docker
-    ports:
-      - 80:80
+      - ./src/:/app
